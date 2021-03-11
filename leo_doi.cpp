@@ -172,7 +172,7 @@ void NDFS(int u,int e){
 		cout<<"tim kiem that bai!";return;	
 		}
 		temp=st.gettop(); // luu lai vi tri top cua stack
-		cout<<"recent(temp) top buoc "<<c<<": "<<temp<<endl;
+	
 		
 		// them dinh da xet vao tap da duyet
 		Free[st.gettop()] = false; // tap da duyet
@@ -220,7 +220,7 @@ cout<<"dinh ket thuc:";
 
 for (int i=1; i<=n; i++){
     for (int j=1; j<=n; j++)
-      {  a[i][j].setrode(0);} // Ð?u tiên chúng ta coi d? th? không có c?nh nào c?
+      {  a[i][j].setrode(0);} // Ã?u tiÃªn chÃºng ta coi d? th? khÃ´ng cÃ³ c?nh nÃ o c?
 }
 for (int i=1; i<=m; i++)
 {	cout<<"nhap vao dinh 1:";
