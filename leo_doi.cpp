@@ -3,7 +3,7 @@
 using namespace std;
 #define NMAX 100
 
-//////////////////////
+/////////////////////////
 // class stack 
 class stack{
 	int top;
@@ -63,6 +63,7 @@ class stack{
 ////////////////////////////////////////////////////////
 // class dung de luu cac gia gia tri cua 1 dinh cua do thi
 class node{
+// bien: key(ten dinh),value(gia tri h),rode(duong di)
 	int key,value,rode;
 	
 	public:
@@ -92,7 +93,7 @@ class node{
 	int setvalue(int v){
 		return this->value = v;
 	}
-	
+// tao ra de test(hoi thua thi phai :)))	
 	node operator++(int){
 		node N(key,value,rode);
 		++key;
@@ -101,6 +102,8 @@ class node{
 
 };
 ////////////////////////////////////////
+// ham phu xuat cac dinh ra man hinh
+// ko hieu tai sao no khong cho chay trong main (~~>_<~~) 
 void show(int n){
 	for(int k = 1; k<=n;k++) {cout<<k<<" ";}cout<<endl;
 }
@@ -172,7 +175,7 @@ void NDFS(int u,int e){
 		cout<<"tim kiem that bai!";return;	
 		}
 		temp=st.gettop(); // luu lai vi tri top cua stack
-	
+		
 		
 		// them dinh da xet vao tap da duyet
 		Free[st.gettop()] = false; // tap da duyet
@@ -209,21 +212,22 @@ void NDFS(int u,int e){
 
 int main(){
 	
-cout<<"nhap vao so dinh cua do thi";
+cout<<"nhap vao so dinh cua do thi: ";
 cin >> n;
-cout<<"nhap vao so canh cua do thi";
+cout<<"nhap vao so canh cua do thi: ";
 cin >> m;
-cout<<"dinh xuat phat:";
+cout<<"dinh xuat phat: ";
 	cin>> s;
-cout<<"dinh ket thuc:";
+cout<<"dinh ket thuc: ";
 	cin>> f;
-
+/// khoi tao do thi
 for (int i=1; i<=n; i++){
     for (int j=1; j<=n; j++)
-      {  a[i][j].setrode(0);} // Ã?u tiÃªn chÃºng ta coi d? th? khÃ´ng cÃ³ c?nh nÃ o c?
+      {  a[i][j].setrode(0);} // Ðau tiên chúng ta coi do thi không có canh nào ca
 }
+// tien hanh nhap du lieu
 for (int i=1; i<=m; i++)
-{	cout<<"nhap vao dinh 1:";
+{	cout<<"canh thu : "<<i<<endl;
     cin >> u;
     cout<<"nhap vao ham danh gia cua dinh 1: ";
     cin>>s1;
@@ -234,7 +238,7 @@ for (int i=1; i<=m; i++)
     a[u][v].setrode(1);a[u][v].setvalue(s1);
     a[v][u].setrode(1);a[v][u].setvalue(s2);
 }
-
+// hien thi duong di cua do thi
 cout<<"duong di:"<<endl;
 cout<<"  |";show(n);
 for(int i= 1; i<=n;i++)
@@ -246,7 +250,8 @@ for(int i= 1; i<=n;i++)
 	
 	cout<<endl;
 }
-cout<<"ham danh gia:"<<endl;
+// hien thi ham danh gia cua cac dinh tren do thi
+cout<<"gia tri ham danh gia:"<<endl;
 cout<<"  |";show(n);
 for(int i= 1; i<=n;i++)
 {	 
@@ -257,22 +262,12 @@ for(int i= 1; i<=n;i++)
 	
 	cout<<endl;
 }
-
-
-
+// khoi tao list check
 for (int i = 1; i <= n; i++)
         Free[i] = 1;
    //DFS(s,f);
 
 NDFS(s,f);
-//	stack St;
-//	St.push(3);
-//	St.push(4);
-//	cout<<"dinh: 1"<<St.gettop();
-//	St.push(5);
-//	St.pop();
-//	St.output();
-//	cout<<"dinh: 2"<<St.gettop();
     return 0;
 
 }
