@@ -128,10 +128,9 @@ void Sort(vector<int> &arr, int n,int t)
 
     max_idx = i;
     for (j = i+1; j < n; j++){
-	
+		cout<<"\n------------------------------------------------"<<endl;
     	cout<<"\ngia tri cua "<<arr[j]<<": "<<a[arr[j]][t].getvalue()<<endl;
-		cout<<"\ngia tri cua "<<arr[max_idx]<<": "<<a[arr[max_idx]][t].getvalue()<<endl;  
-		cout<<"\ngia tri cua min_idx :"<<max_idx<<endl;
+		cout<<"\ngia tri cua "<<arr[max_idx]<<": "<<a[arr[max_idx]][t].getvalue()<<endl;
 		// sap xem theo chieu giam dan cua ham danh gia
 		// de tien cho viec append vao stack
         if (a[arr[j]][t].getvalue() > a[arr[max_idx]][t].getvalue()){
@@ -172,6 +171,7 @@ void NDFS(int u,int e){
 	while(true){
 		// neu stack rong thi ket thuc
 		if(st.isempty()){
+		cout<<"\n------------------------------------------------"<<endl;
 		cout<<"tim kiem that bai!";return;	
 		}
 		temp=st.gettop(); // luu lai vi tri top cua stack
@@ -185,7 +185,8 @@ void NDFS(int u,int e){
 		
 		// kiem tra xem diem do co phai diem dich hay ko, neu dung thi ket thuc
 		if(e==temp){
-    	cout<<"tim thay dich la:"<<e;
+		cout<<"\n------------------------------------------------"<<endl;
+    	cout<<"\ntim thay dich la:"<<e;
     	return;
 		}
 		
@@ -220,6 +221,7 @@ cout<<"dinh xuat phat: ";
 	cin>> s;
 cout<<"dinh ket thuc: ";
 	cin>> f;
+cout<<"\n------------------------------------------------"<<endl;
 /// khoi tao do thi
 for (int i=1; i<=n; i++){
     for (int j=1; j<=n; j++)
@@ -228,6 +230,7 @@ for (int i=1; i<=n; i++){
 // tien hanh nhap du lieu
 for (int i=1; i<=m; i++)
 {	cout<<"canh thu : "<<i<<endl;
+	cout<<"nhap vao dinh 1:";
     cin >> u;
     cout<<"nhap vao ham danh gia cua dinh 1: ";
     cin>>s1;
@@ -238,6 +241,7 @@ for (int i=1; i<=m; i++)
     a[u][v].setrode(1);a[u][v].setvalue(s1);
     a[v][u].setrode(1);a[v][u].setvalue(s2);
 }
+cout<<"\n------------------------------------------------"<<endl;
 // hien thi duong di cua do thi
 cout<<"duong di:"<<endl;
 cout<<"  |";show(n);
@@ -250,6 +254,7 @@ for(int i= 1; i<=n;i++)
 	
 	cout<<endl;
 }
+cout<<"\n------------------------------------------------"<<endl;
 // hien thi ham danh gia cua cac dinh tren do thi
 cout<<"gia tri ham danh gia:"<<endl;
 cout<<"  |";show(n);
