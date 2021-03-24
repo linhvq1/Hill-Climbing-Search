@@ -120,7 +120,7 @@ void swap(int &x, int &y)
 }
 // ham sap xep phan tu them ham danh gia
 void Sort(vector<int> &arr, int n,int t)
-{
+{	cout<<"\n------------------------------------------------"<<endl;
     int i, j, max_idx;
 
     for (i = 0; i < n-1; i++)
@@ -128,9 +128,9 @@ void Sort(vector<int> &arr, int n,int t)
 
     max_idx = i;
     for (j = i+1; j < n; j++){
-		cout<<"\n------------------------------------------------"<<endl;
-    	cout<<"\ngia tri cua "<<arr[j]<<": "<<a[arr[j]][t].getvalue()<<endl;
-		cout<<"\ngia tri cua "<<arr[max_idx]<<": "<<a[arr[max_idx]][t].getvalue()<<endl;
+		//cout<<"\n------------------------------------------------"<<endl;
+//    	cout<<"\ngia tri cua "<<arr[j]<<": "<<a[arr[j]][t].getvalue()<<endl;
+//		cout<<"\ngia tri cua "<<arr[max_idx]<<": "<<a[arr[max_idx]][t].getvalue()<<endl;
 		// sap xem theo chieu giam dan cua ham danh gia
 		// de tien cho viec append vao stack
         if (a[arr[j]][t].getvalue() > a[arr[max_idx]][t].getvalue()){
@@ -168,6 +168,8 @@ void NDFS(int u,int e){
 	int temp;
 	// khoi tao L 
 	vector<int> L;
+	//tap duong di
+	vector<int> result;
 	while(true){
 		// neu stack rong thi ket thuc
 		if(st.isempty()){
@@ -175,7 +177,7 @@ void NDFS(int u,int e){
 		cout<<"tim kiem that bai!";return;	
 		}
 		temp=st.gettop(); // luu lai vi tri top cua stack
-		
+		result.push_back(temp);
 		
 		// them dinh da xet vao tap da duyet
 		Free[st.gettop()] = false; // tap da duyet
@@ -187,6 +189,11 @@ void NDFS(int u,int e){
 		if(e==temp){
 		cout<<"\n------------------------------------------------"<<endl;
     	cout<<"\ntim thay dich la:"<<e;
+    	cout<<"\nduong di: "<<endl;
+    	for(int i=0;i<result.size();i++){
+    		if(i==result.size()-1) cout<<result[i];
+    		else cout<<result[i]<<"-->";
+		}
     	return;
 		}
 		
@@ -205,6 +212,7 @@ void NDFS(int u,int e){
 	 	for(int i=0;i<L.size();i++){
 	 		st.push(L[i]);
 		 }
+		 
 		 // xoa trong danh sach L
 		 L.clear();
 		
@@ -225,7 +233,7 @@ cout<<"\n------------------------------------------------"<<endl;
 /// khoi tao do thi
 for (int i=1; i<=n; i++){
     for (int j=1; j<=n; j++)
-      {  a[i][j].setrode(0);} // Ðau tiên chúng ta coi do thi không có canh nào ca
+      {  a[i][j].setrode(0);} // ?au tiÃªn chÃºng ta coi do thi khÃ´ng cÃ³ canh nÃ o ca
 }
 // tien hanh nhap du lieu
 for (int i=1; i<=m; i++)
@@ -271,7 +279,7 @@ for(int i= 1; i<=n;i++)
 for (int i = 1; i <= n; i++)
         Free[i] = 1;
    //DFS(s,f);
-
+cout<<"\n trang thai cua danh sach L qua tung buoc: "<<endl;
 NDFS(s,f);
     return 0;
 
