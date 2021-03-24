@@ -16,6 +16,18 @@ This solution may not be the global optimal maximum.
 * ‘Heuristic search’ means that this search algorithm may not find the optimal solution to the problem. However, it will give a good solution in reasonable time.
 * A heuristic function is a function that will rank all the possible alternatives at any branching step in search algorithm based on the available information. It helps the algorithm to select the best route out of possible routes.
 
+**[ALGORITHM] :**
+
+![ALGORITHM](/img/algorithm.png)
+
+**[EXAMPLE] :**
+
+![EXAMPLE](/img/Example.png)
+
+**[RESULT] :**
+
+![RESULT](/img/result.png)
+
 **ADVANCE :**
 - [X] Use adjacency matrix! ✔
 - [X] Built-in ***C++*** ✔
