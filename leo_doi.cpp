@@ -160,7 +160,7 @@ void DFS(int u, int e)
 	}
 }
 ///////////////////////////////
-//tim chieu sau ban moi
+//tim chieu sau ban moi ---> thuat toan leo doi
 void NDFS(int u,int e){
 	// khoi tao stack
 	stack st;
@@ -233,7 +233,7 @@ cout<<"\n------------------------------------------------"<<endl;
 /// khoi tao do thi
 for (int i=1; i<=n; i++){
     for (int j=1; j<=n; j++)
-      {  a[i][j].setrode(0);} // ?au tiên chúng ta coi do thi không có canh nào ca
+      {  a[i][j].setrode(0);} // coi do thi ko co canh nao
 }
 // tien hanh nhap du lieu
 for (int i=1; i<=m; i++)
